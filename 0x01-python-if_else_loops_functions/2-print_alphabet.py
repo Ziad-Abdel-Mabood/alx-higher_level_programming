@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 
-while (a < z):
-    print(i)
-    a++
+for letter in range(97, 123):
+    print(chr(letter), end="")
