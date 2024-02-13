@@ -9,10 +9,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor Method"""
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
 
 @property
@@ -24,40 +24,40 @@ def width(self):
 @width.setter
 def width(self, input):
     """width attr setter"""
-    self.width = input
+    self.__width = input
 
 
 @property
 def height(self):
     """height attr getter"""
-    return self.height
+    return self.__height
 
 
 @height.setter
 def height(self, input):
     """height attr setter"""
-    self.height = input
+    self.__height = input
 
 
 @property
 def x(self):
     """ x attr getter"""
-    return self.x
+    return self.__x
 
 
 @x.setter
 def x(self, input):
     """ x attr setter"""
-    self.x = input
+    self.__x = input
 
 
 @property
 def y(self):
     """ y attr getter"""
-    return self.x
+    return self.__y
 
 
 @y.setter
 def y(self, input):
     """ y attr setter"""
-    self.y = input
+    self.__y = input
