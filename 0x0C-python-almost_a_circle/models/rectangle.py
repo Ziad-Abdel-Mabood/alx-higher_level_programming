@@ -83,7 +83,7 @@ class Rectangle(Base):
                   (' ' * self.x + '#' * self.width + '\n') * self.height
         print(graphic, end='')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ updates instance attr"""
         if args:
             self.__update(*args)
