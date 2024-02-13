@@ -1,4 +1,4 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 """ Rectangle class module"""
 from models.base import Base
 
@@ -24,6 +24,7 @@ def width(self):
 @width.setter
 def width(self, input):
     """width attr setter"""
+    self.assert_integer("width", input)
     self.__width = input
 
 
@@ -36,6 +37,7 @@ def height(self):
 @height.setter
 def height(self, input):
     """height attr setter"""
+    self.assert_integer("height", input)
     self.__height = input
 
 
@@ -48,6 +50,7 @@ def x(self):
 @x.setter
 def x(self, input):
     """ x attr setter"""
+    self.assert_integer("x", input, coordinates=True)
     self.__x = input
 
 
@@ -60,4 +63,15 @@ def y(self):
 @y.setter
 def y(self, input):
     """ y attr setter"""
+    self.assert_integer("y", input, coordinates=True)
     self.__y = input
+
+
+def assert_integer(self, attribute, input, coordinates=False):
+    """ Method to make sure input is valid; integer and > 0"""
+    if type(input) != int:
+        raise TypeError(f"{attribute} must be an integer")
+    if (not coordinates) and input <= 0:
+        raise ValueError(f"{attribute} must be > 0")
+    elif coordinates and input < 0:
+        raise ValueError(f"{attribute} must be >= 0")
