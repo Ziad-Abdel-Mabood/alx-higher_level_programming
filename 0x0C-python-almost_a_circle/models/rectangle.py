@@ -102,3 +102,8 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def to_dictionary(self):
+        """ returns the dict representation of a Rectangle class"""
+        return {"id": self.id, "width": self.__width, "height": self.__height,
+                "x": self.__x, "y": self.__y}
