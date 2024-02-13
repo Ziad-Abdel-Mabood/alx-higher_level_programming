@@ -1,19 +1,18 @@
 """ Base Class Module """
 
+
 class Base:
-    """
-    Base class
+    """ Base class
         nb_objects: manage id attribute
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None):
-        """
-        constructor method
+        """constructor
 
             id : id number attr of the object
         """
-        
         if id is not None:
             self.id = id
         else:
