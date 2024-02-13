@@ -17,7 +17,7 @@ class Rectangle(Base):
     def __str__(self):
         """returns string info of this rectangle object"""
         return '[{}] ({}) {}/{} - {}/{}'.\
-               format(type(self.__name__), self.id, self.x, self.y,
+               format(type(self).__name__, self.id, self.x, self.y,
                       self.width, self.height)
 
     @property
