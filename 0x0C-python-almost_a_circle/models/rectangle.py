@@ -9,9 +9,13 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor Method"""
         super().__init__(id)
+        self.assert_integer("width", input, False)
         self.__width = width
+        self.assert_integer("height", input, False)
         self.__height = height
+        self.assert_integer("x", input)
         self.__x = x
+        self.assert_integer("y", y)
         self.__y = y
 
     def __str__(self):
