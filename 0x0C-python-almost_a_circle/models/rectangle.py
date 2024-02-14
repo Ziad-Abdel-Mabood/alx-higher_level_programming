@@ -93,7 +93,7 @@ class Rectangle(Base):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
-        
+
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         """ updates attributes depending on given input"""
         if id is not None:

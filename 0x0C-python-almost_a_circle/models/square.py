@@ -32,7 +32,7 @@ class Square(Rectangle):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
-        
+
     def __update(self, id=None, size=None, x=None, y=None):
         """ updates attributes depending on given input"""
         if id is not None:
