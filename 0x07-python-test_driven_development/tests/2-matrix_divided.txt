@@ -1,0 +1,15 @@
+import module:
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+>>> matrix_divided([[2, 4, 8], [1, 2, 3]], 2)
+[[1.0, 2.0, 4.0], [0.5, 1.0, 1.5]]
+
+>>> matrix_divided([[2]], 2)
+[[1.0]]
+
+>>> m = [[2, 4, 8], [1, 2, 3]]
+>>> matrix_divided(m, 2)
+[[1.0, 2.0, 4.0], [0.5, 1.0, 1,5]]
+>>> m[1][1]
+2
+
