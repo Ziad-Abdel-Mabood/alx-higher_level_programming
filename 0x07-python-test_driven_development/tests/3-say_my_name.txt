@@ -31,7 +31,7 @@ TypeError: last_name must be a string
 ============================
 
 >>> say_my_name( 'Walter')
-My name is Walter
+My name is Walter 
 
 =========================================================
 [5] if first_name isn't given
