@@ -21,7 +21,7 @@ if __name__ == "__main__":
                          port=3306)
     cur = db.cursor()
     cur.execute("SELECT * FROM states \
-                WHERE name = '{}' \
+                WHERE BINARY name = '{}' \
                 ORDER BY id ASC".format(state_name))
     selection = cur.fetchall()
     for row in selection:
