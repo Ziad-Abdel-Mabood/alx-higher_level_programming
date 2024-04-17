@@ -3,21 +3,10 @@
 contains the class definition of a State
 and an instance Base = declarative_base()
 """
-import MySQLdb
-import sys
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
 Base = declarative_base()
-username = sys.argv[1]
-password = sys.argv[2]
-dbname = sys.argv[3]
-
-db = MySQLdb.connect(host='localhost',
-                     user=username,
-                     passwd=password,
-                     db=dbname,
-                     port=3306)
 
 
 class State(Base):
