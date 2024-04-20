@@ -12,10 +12,11 @@ if __name__ == "__main__":
     engine = sqlalchemy.create_engine(
              f'mysql+mysqldb://{usr}:{pwd}@localhost:3306/{db}')
     conn = engine.connect()
-    query = sqlalchemy.sql.text('SELECT * FROM states ORDER BY id ASC')
+    query = sqlalchemy.sql.text(
+            'SELECT id, name FROM states where id = 1 ORDER BY id ASC')
     execution = conn.execute(query)
-    if execution[0]:
-        row = execution[0]
-        print(f'{row[0]}: {row[1]}')
+    result = execution.fetchone()
+    if result:
+        print(f'{result[0]}: {result[1]}')
     else:
         print('Nothing')
