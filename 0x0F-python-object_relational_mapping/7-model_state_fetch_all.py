@@ -12,7 +12,9 @@ if __name__ == "__main__":
     engine = sqlalchemy.create_engine(
              f'mysql+mysqldb://{usr}:{pwd}@localhost:3306/{db}')
     conn = engine.connect()
-    query = sqlalchemy.sql.text('SELECT * FROM states ORDER BY id ASC')
-    execution = conn.execute(query)
-    for row in execution:
-        print(f'{row[0]}: {row[1]}')
+    meta = sqlalchemy.MetaData()
+    states = sqlalchemy.Table('states', meta, autoload_with=engine)
+    sel = states.select()
+    result = conn.execute(sel)
+    for row in result:
+        print(f'{row.id}: {row.name}')
